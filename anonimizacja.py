@@ -1,11 +1,6 @@
 text = input("Podaj tekst do anonimizacji: ")
 
-final_text = ""
+for digit in "0123456789":
+    text = text.replace(digit,"X")
 
-for char in text:
-    if char.isdigit():
-        final_text += "X"
-    else:
-        final_text += char
-
-print("Zanonimizowany tekst to", final_text)
+print("Zanonimizowany tekst to", text)
