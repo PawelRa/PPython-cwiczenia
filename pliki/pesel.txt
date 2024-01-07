@@ -1,0 +1,3 @@
+To jest plik z moimi tajnymi danymi
+Mój pesel to 123456779
+Zarabiam 125$
