@@ -8,8 +8,8 @@ file_path += r"\*.txt"
 files = glob.glob(file_path)
 for file in files:
     if '.' in file:
-        file_parts = file.rsplit('.', maxsplit=1)
-        os.rename(file, file_parts[0] + NEW_EXTENSION)
-        print("Nowy plik =", file_parts[0] + NEW_EXTENSION)
+        file_name, extension = file.rsplit('.', maxsplit=1)
+        os.rename(file, file_name + NEW_EXTENSION)
+        print("Nowy plik =", file_name + NEW_EXTENSION)
     else:
         print(file)
