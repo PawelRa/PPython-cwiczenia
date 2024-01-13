@@ -9,12 +9,20 @@ for punc in PUNCTATIONS:
     content = content.replace(punc,"")  
 content = content.split(sep='\n')
 
-word = input("Podaj słowo do sprawdzenia: ").lower()
+text = input("Podaj słowa do sprawdzenia: ").lower()
+words_to_check = text.split()
 counter = 0
 for line in content:
     line = line.lower()
     words = line.split()
-    if word in words:
+    temp_counter = False
+    for word in words:
+        for check in words_to_check:
+            if word == check:
+                temp_counter = True
+                break
+    if temp_counter:
         counter += 1
+        temp_counter = False
 
-print("Słowo ", word, "występuje", counter, "razy.")
+print('Liczba komentarzy zawierających', text, 'wynosi', counter)
